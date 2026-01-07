@@ -1,0 +1,15 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+
+  - repo: local
+    hooks:
+      - id: erp-verify-fast
+        name: erp-verify-fast
+        entry: bash -lc "npm run verify:fast"
+        language: system
+        pass_filenames: false

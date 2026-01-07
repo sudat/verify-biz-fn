@@ -1,0 +1,8 @@
+{
+  "extends": ["bpmnlint:recommended"],
+  "rules": {
+    "label-required": "warn",
+    "no-disconnected": "error",
+    "no-duplicate-sequence-flows": "error"
+  }
+}

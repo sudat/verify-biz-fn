@@ -1,0 +1,14 @@
+version: 1
+contexts:
+  - key: gl
+    root: "src/contexts/gl"
+  - key: ap
+    root: "src/contexts/ap"
+  - key: master
+    root: "src/contexts/master"
+
+# Allow list (from -> to)
+allow:
+  gl: ["master"]
+  ap: ["master", "gl"]
+  master: []

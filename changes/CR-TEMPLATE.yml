@@ -1,0 +1,15 @@
+id: CR-YYYYMMDD-001
+summary: "短文の変更要求をここに書く"
+details: ""
+change_candidates:
+  process_change: { value: false, confidence: 0.0 }
+  decision_change: { value: false, confidence: 0.0 }
+  glossary_change: { value: false, confidence: 0.0 }
+  contextmap_change: { value: false, confidence: 0.0 }
+targets:
+  bpmn: []
+  dmn: []
+  glossary: ["spec/glossary.yml"]
+  contextmap: ["spec/context-map.yml"]
+decision_gates: []
+acceptance_criteria: []

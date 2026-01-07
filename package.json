@@ -1,34 +1,42 @@
 {
-  "name": "verify-biz-fn",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
-  },
-  "dependencies": {
-    "next": "16.1.1",
-    "react": "19.2.3",
-    "react-dom": "19.2.3"
-  },
-  "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.1.1",
-    "tailwindcss": "^4",
-    "typescript": "^5"
-  },
-  "ignoreScripts": [
-    "sharp",
-    "unrs-resolver"
-  ],
-  "trustedDependencies": [
-    "sharp",
-    "unrs-resolver"
-  ]
+	"name": "verify-biz-fn",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "eslint",
+		"verify": "npm run verify:rules && npm run verify:bpmn && npm run verify:dmn",
+		"verify:fast": "npm run verify:rules",
+		"verify:rules": "node scripts/check-change-packages.mjs && node scripts/check-glossary-refs.mjs && node scripts/check-contextmap-imports.mjs",
+		"verify:bpmn": "npx bpmnlint -c .bpmnlintrc \"spec/process/**/*.bpmn\"",
+		"verify:dmn": "bash scripts/lint-dmn.sh"
+	},
+	"dependencies": {
+		"next": "16.1.1",
+		"react": "19.2.3",
+		"react-dom": "19.2.3"
+	},
+	"devDependencies": {
+		"@tailwindcss/postcss": "^4",
+		"@types/node": "^20",
+		"@types/react": "^19",
+		"@types/react-dom": "^19",
+		"eslint": "^9",
+		"eslint-config-next": "16.1.1",
+		"tailwindcss": "^4",
+		"typescript": "^5",
+		"bpmnlint": "^11.0.0",
+		"fast-glob": "^3.3.2",
+		"yaml": "^2.5.1"
+	},
+	"ignoreScripts": [
+		"sharp",
+		"unrs-resolver"
+	],
+	"trustedDependencies": [
+		"sharp",
+		"unrs-resolver"
+	]
 }

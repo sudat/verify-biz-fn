@@ -1,0 +1,10 @@
+version: 1
+terms:
+  - term: "«請求書»"
+    definition: "仕入先から受領する請求の根拠となる書類またはデータ。"
+    synonyms: []
+    context: "AP"
+  - term: "«仕訳»"
+    definition: "勘定科目・金額・税区分などを持つ会計記録。"
+    synonyms: ["«ジャーナル»"]
+    context: "GL"
