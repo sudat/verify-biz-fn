@@ -1,3 +1,4 @@
+# .pre-commit-config.yaml
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.6.0
@@ -11,5 +12,11 @@ repos:
       - id: erp-verify-fast
         name: erp-verify-fast
         entry: bash -lc "npm run verify:fast"
+        language: system
+        pass_filenames: false
+
+      - id: erp-verify-models
+        name: erp-verify-models
+        entry: bash -lc "npm run verify:bpmn && npm run verify:dmn"
         language: system
         pass_filenames: false

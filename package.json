@@ -9,7 +9,7 @@
 		"lint": "eslint",
 		"verify": "npm run verify:rules && npm run verify:bpmn && npm run verify:dmn",
 		"verify:fast": "npm run verify:rules",
-		"verify:rules": "node scripts/check-change-packages.mjs && node scripts/check-glossary-refs.mjs && node scripts/check-contextmap-imports.mjs",
+		"verify:rules": "node scripts/check-change-packages.mjs && node scripts/check-glossary-refs.mjs && node scripts/check-glossary-naked.mjs && node scripts/check-contextmap-imports.mjs",
 		"verify:bpmn": "npx bpmnlint -c .bpmnlintrc \"spec/process/**/*.bpmn\"",
 		"verify:dmn": "bash scripts/lint-dmn.sh"
 	},
